@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IB Physics tutorials, topic guides, examination information and study tips from Bootcamp for Science.">
+  <title>IB Physics | Bootcamp for Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+  <script src="../../../script.js"></script>
+  <style>
+    /* Page-specific rules; global typography and navigation come from /style.css. */
+    .ib-page { max-width: 800px; margin: 0 auto; padding: 54px 30px 100px; }
+    .ib-page h1 { margin: 0 0 20px; font-size: clamp(2.4rem, 5vw, 3.5rem); font-weight: 500; }
+    .ib-page h2 { margin: 55px 0 20px; font-size: clamp(1.9rem, 4vw, 2.5rem); font-weight: 500; }
+    .ib-page h3 { margin: 35px 0 14px; font-size: 1.6rem; font-weight: 500; }
+    .ib-page p { margin: 0 0 17px; }
+    .ib-page ul { padding-left: 1.7rem; margin: 10px 0 22px; }
+    .ib-page li { margin: 7px 0; }
+    .ib-page a { color: #9e1748; text-underline-offset: 3px; }
+    .ib-page a:hover { text-decoration-thickness: 2px; }
+    .ib-page .topic-list { list-style: disc; }
+    .ib-page .notice { border-left: 3px solid #9e1748; padding: 12px 16px; margin: 25px 0 30px; background: #faf7f8; font-family: Inter, Arial, sans-serif; font-size: .88rem; line-height: 1.6; color: #4a3c41; }
+    .ib-page .table-scroll { overflow-x: auto; margin: 24px 0 36px; }
+    .ib-page table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.55; }
+    .ib-page th, .ib-page td { border: 1px solid #b7b7b7; text-align: left; vertical-align: top; padding: 15px 17px; width: 50%; }
+    .ib-page th { font-weight: 600; background: #fafafa; }
+    .ib-page .table-scroll ul { margin: 0; padding-left: 1.25rem; }
+    .ib-page .table-scroll li { margin: 3px 0; }
+    @media (max-width: 600px) { .ib-page { padding: 38px 20px 70px; } .ib-page th, .ib-page td { padding: 12px; min-width: 230px; } }
+  </style>
+</head>
+<script defer
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<body>
+  <div id="navbar"></div>
+  
+    <main class="ib-page">
 
+        <h1>Motion in One Dimension</h1>
+
+        <p>
+            This section introduces the concepts of
+            one-dimensional motion, including motion diagrams,
+            kinematics, and free fall.
+        </p>
+
+        <h2>Topics</h2>
+
+        <ul class="topic-list">
+            <li>Vectors and Scalars</li>
+            <li>Motion Diagrams</li>
+            <li>Kinematic Equations</li>
+            <li>Motion on an Inclined Plane</li>
+            <li>Free-Fall Motion</li>
+            <li>Practice Questions</li>
+        </ul>
+
+        <h2>Learning Objectives</h2>
+
+        <p>After completing this section, you should be able to:</p>
+
+        <ul>
+            <li>
+                Distinguish between vectors and scalars,
+                including displacement versus distance,
+                and velocity versus speed.
+            </li>
+
+            <li>
+                Explain the difference between instantaneous
+                velocity and instantaneous speed.
+            </li>
+
+            <li>
+                Interpret displacement-time, velocity-time,
+                and acceleration-time graphs.
+            </li>
+
+            <li>
+                Determine displacement from the area under
+                a velocity-time graph.
+            </li>
+
+            <li>
+                Determine velocity and acceleration using
+                derivatives of position and velocity.
+            </li>
+
+            <li>
+                Apply kinematic equations to solve problems.
+            </li>
+
+            <li>
+                Analyze free-fall motion and its motion diagrams.
+            </li>
+        </ul>
+
+        <h2>Kinematic Equations</h2>
+
+        <p>
+            For motion with constant acceleration,
+            the following equations are useful:
+        </p>
+
+        <div class="equations">
+            <p>\(v = v_0 + at\)</p>
+            <p>\(\Delta x = \frac{v+v_0}{2}t\)</p>
+            <p>\(\Delta x = v_0t + \frac{1}{2}at^2\)</p>
+            <p>\(v^2 = v_0^2 + 2a\Delta x\)</p>
+        </div>
+
+        <h3>Symbols</h3>
+
+        <ul>
+            <li>\(v_0\): Initial velocity</li>
+            <li>\(v\): Final velocity</li>
+            <li>\(a\): Acceleration</li>
+            <li>\(t\): Elapsed time</li>
+            <li>\(\Delta x\): Displacement</li>
+        </ul>
+
+        <h2>Lecture Resources</h2>
+
+        <p>
+            Download the lecture slides and notes to review
+            the concepts covered in this section.
+        </p>
+
+        <ul>
+            <li>
+                <a href="Motion-In-1D-Lecture.pdf"
+                target="_blank" rel="noopener">
+                    Lecture Slides (PDF)
+                </a>
+            </li>
+            <li>
+                <a href="Motion-In-1D-Lecture.pptx" download>
+                    Lecture Slides (PowerPoint)
+                </a>
+            </li>
+        </ul>
+
+        
+        <h2>Vectors and Scalars</h2>
+
+        <p>
+            A <strong>vector</strong> is a physical quantity that has both magnitude and direction, whereas a <strong>scalar</strong>
+            is a physical quantity that has magnitude only.
+            Magnitude describes the size of a quantity.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+            Consider a ball moving at 3 meters per second to the left.
+        </p>
+
+        <ul>
+            <li>
+                <strong>3 meters per second (3 m/s):</strong>
+                The magnitude of the velocity, also known as speed.
+            </li>
+            <li>
+                <strong>Left:</strong>
+                The direction of motion.
+            </li>
+            <li>
+                <strong>3 meters per second to the left:</strong>
+                The velocity, which includes both magnitude and direction.
+            </li>
+        </ul>
+
+        <h3>Examples of Scalar and Vector Quantities</h3>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Scalar Quantities</th>
+                        <th>Vector Quantities</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Distance</td>
+                        <td>Displacement</td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td>Velocity</td>
+                    </tr>
+                    <tr>
+                        <td>Mass</td>
+                        <td>Force</td>
+                    </tr>
+                    <tr>
+                        <td>Energy</td>
+                        <td>Acceleration</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>Momentum</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>
+            In this unit, we will focus primarily on
+            <strong>distance and speed</strong> as scalar quantities,
+            and <strong>displacement, velocity, and acceleration</strong>
+            as vector quantities.
+        </p>
+
+        Quiz on vector and scalar: https://docs.google.com/forms/d/e/1FAIpQLSdvps2pIKWhqVBim6QA3grpgHVb_-X8EHMBxxFbfGNNURwSTA/viewform
+
+        
+        <h2>Motion Diagrams</h2>
+
+        <p>
+            Motion graphs provide a visual representation of how an object's position, velocity, and 
+            acceleration change over time.
+        </p>
+
+        <p>
+            In this section, we will explore three types of graphs:
+        </p>
+
+        <ul>
+            <li>Displacement vs. Time</li>
+            <li>Velocity vs. Time</li>
+            <li>Acceleration vs. Time</li>
+        </ul>
+
+        <p>
+            When interpreting motion graphs, two important concepts
+            are the <strong>gradient (slope)</strong> and the
+            <strong>area under the curve</strong>.
+        </p>
+
+        <h3>1. Displacement vs. Time</h3>
+
+        <p>
+            Velocity is the rate of change of displacement
+            with respect to time. Therefore, the gradient
+            of a displacement-time graph represents velocity.
+        </p>
+
+        <p>
+            For a straight-line graph:
+        </p>
+
+        <p>
+            \(v = \frac{\Delta x}{\Delta t}\)
+        </p>
+
+        <ul>
+            <li>
+                <strong>Zero gradient:</strong>
+                The object is stationary.
+            </li>
+            <li>
+                <strong>Positive gradient:</strong>
+                The object moves in the positive direction.
+            </li>
+            <li>
+                <strong>Negative gradient:</strong>
+                The object moves in the negative direction.
+            </li>
+            <li>
+                <strong>Steeper gradient:</strong>
+                The object has a greater speed.
+            </li>
+        </ul>
+
+        <p>
+            A straight line with a constant gradient indicates
+            constant velocity. A curved line indicates changing
+            velocity, and its gradient at a particular point
+            gives the instantaneous velocity.
+        </p>
+
+        <h3>2. Velocity vs. Time</h3>
+
+        <p>
+            The gradient of a velocity-time graph represents
+            acceleration:
+        </p>
+
+        <p>
+            \(a = \frac{\Delta v}{\Delta t}\)
+        </p>
+
+        <ul>
+            <li>
+                <strong>Zero gradient:</strong>
+                The object moves at constant velocity.
+            </li>
+            <li>
+                <strong>Positive gradient:</strong>
+                The object has positive acceleration.
+            </li>
+            <li>
+                <strong>Negative gradient:</strong>
+                The object has negative acceleration.
+            </li>
+        </ul>
+
+        <p>
+            The signed area under a velocity-time graph
+            represents displacement:
+        </p>
+
+        <p>
+            \(\Delta x = \int_{t_1}^{t_2} v(t)\,dt\)
+        </p>
+
+        <ul>
+            <li>
+                Area above the time axis contributes
+                positive displacement.
+            </li>
+            <li>
+                Area below the time axis contributes
+                negative displacement.
+            </li>
+            <li>
+                The sum of the absolute areas represents
+                the total distance traveled.
+            </li>
+        </ul>
+
+        <h3>3. Acceleration vs. Time</h3>
+
+        <p>
+            The signed area under an acceleration-time graph
+            represents the change in velocity:
+        </p>
+
+        <p>
+            \(\Delta v = \int_{t_1}^{t_2} a(t)\,dt\)
+        </p>
+
+        <ul>
+            <li>
+                <strong>Positive area:</strong>
+                Contributes a positive change in velocity.
+            </li>
+            <li>
+                <strong>Negative area:</strong>
+                Contributes a negative change in velocity.
+            </li>
+            <li>
+                <strong>Zero acceleration:</strong>
+                The object's velocity remains constant.
+            </li>
+        </ul>
+
+        <p>
+            The gradient of an acceleration-time graph
+            represents the rate of change of acceleration,
+            known as <em>jerk</em>. This is generally beyond
+            the scope of introductory IB Physics.
+        </p>
+
+        <h2>Summary</h2>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Graph</th>
+                        <th>Gradient</th>
+                        <th>Area Under Curve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Displacement-Time</td>
+                        <td>Velocity</td>
+                        <td>Not typically used</td>
+                    </tr>
+                    <tr>
+                        <td>Velocity-Time</td>
+                        <td>Acceleration</td>
+                        <td>Displacement</td>
+                    </tr>
+                    <tr>
+                        <td>Acceleration-Time</td>
+                        <td>Jerk</td>
+                        <td>Change in velocity</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>Practice Questions</h2>
+
+        <p>
+            Practice interpreting motion graphs using
+            questions from the IB Physics Questionbank.
+        </p>
+
+        <p>
+            <a href="Motion-Diagram-Problems.pdf"
+            target="_blank"
+            rel="noopener">
+                View Motion Diagram Practice Questions (PDF)
+            </a>
+        </p>
+
+        <h2>Practice Questions</h2>
+
+        <p>
+            Test your understanding of motion diagrams,
+            kinematics, and free-fall motion.
+        </p>
+
+    </main>
+
+
+</body>
+</html>
