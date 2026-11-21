@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn IB Physics two-dimensional motion with vectors, projectile motion, air resistance, inclined planes, worked examples, and practice questions.">
+  <title>Motion in Two Dimensions | Bootcamp for Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+  <script src="../../../script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" defer></script>
+  <style>
+    .ib-page { max-width: 850px; margin: 0 auto; padding: 54px 30px 100px; line-height: 1.75; }
+    .ib-page h1 { margin: 0 0 20px; font-size: clamp(2.3rem, 5vw, 3.3rem); font-weight: 500; line-height: 1.2; }
+    .ib-page h2 { margin: 56px 0 18px; font-size: clamp(1.8rem, 4vw, 2.35rem); font-weight: 500; }
+    .ib-page h3 { margin: 32px 0 12px; font-size: 1.45rem; font-weight: 600; }
+    .ib-page p { margin: 0 0 18px; }
+    .ib-page ul, .ib-page ol { padding-left: 1.6rem; margin: 10px 0 22px; }
+    .ib-page li { margin: 8px 0; }
+    .ib-page a { color: #9e1748; text-underline-offset: 3px; }
+    .ib-page a:hover { text-decoration-thickness: 2px; }
+    .ib-page .lead { font-size: 1.13rem; color: #444; }
+    .ib-page .notice, .ib-page .example, .ib-page .key-idea, .ib-page .checkpoint { padding: 20px 23px; margin: 28px 0; border-left: 3px solid #9e1748; background: #faf7f8; border-radius: 0 8px 8px 0; }
+    .ib-page .example { background: #f7f8fa; border-left-color: #56667a; }
+    .ib-page .key-idea { background: #f6f9f7; border-left-color: #52745e; }
+    .ib-page .checkpoint { background: #fffaf2; border-left-color: #ae7b34; }
+    .ib-page .notice > :last-child, .ib-page .example > :last-child, .ib-page .key-idea > :last-child, .ib-page .checkpoint > :last-child { margin-bottom: 0; }
+    .ib-page .box-title { font-family: Inter, Arial, sans-serif; font-weight: 700; font-size: .92rem; letter-spacing: .01em; margin-bottom: 10px; }
+    .ib-page figure { margin: 28px 0 36px; text-align: center; }
+    .ib-page figure img { max-width: 100%; height: auto; }
+    .ib-page figcaption { font-size: .9rem; color: #666; margin-top: 10px; }
+    .ib-page .table-scroll { overflow-x: auto; margin: 24px 0 36px; }
+    .ib-page table { width: 100%; border-collapse: collapse; font-size: .96rem; line-height: 1.5; }
+    .ib-page th, .ib-page td { border: 1px solid #d1d1d1; text-align: left; vertical-align: top; padding: 13px 15px; }
+    .ib-page th { background: #fafafa; font-weight: 600; }
+    .ib-page .equation { overflow-x: auto; padding: 4px 0; }
+    .ib-page .toc { padding: 22px 26px; border: 1px solid #e5e5e5; border-radius: 10px; margin: 30px 0; }
+    .ib-page .toc h2 { font-size: 1.25rem; margin: 0 0 12px; }
+    .ib-page .toc ul { margin-bottom: 0; }
+    .ib-page details { margin: 12px 0; padding: 12px 16px; border: 1px solid #ddd; border-radius: 6px; }
+    .ib-page summary { cursor: pointer; font-weight: 600; }
+    .ib-page details p { margin-top: 12px; }
+    @media (max-width: 600px) { .ib-page { padding: 38px 20px 70px; } .ib-page .notice, .ib-page .example, .ib-page .key-idea, .ib-page .checkpoint { padding: 16px; } }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <main class="ib-page">
+    <h1>Motion in Two Dimensions</h1>
+    <p class="lead">Many objects move both horizontally and vertically at the same time. A basketball traveling toward a hoop, a ball rolling off a table, and a skier moving down a slope are all examples of motion that we can understand by combining vectors, kinematics, and Newton's laws.</p>
+    <p>In one-dimensional motion, we describe displacement, velocity, and acceleration along a single axis. In two-dimensional motion, we must keep track of two perpendicular directions. The key insight is that we can <strong>analyze each direction separately</strong> and then combine the results to describe the full motion.</p>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>Topics</h2>
+      <ul>
+        <li><a href="#vectors">Vectors and scalars</a></li>
+        <li><a href="#components">Resolving vectors into components</a></li>
+        <li><a href="#projectile">Projectile motion</a></li>
+        <li><a href="#examples">Worked projectile examples</a></li>
+        <li><a href="#drag">Air resistance and terminal velocity</a></li>
+        <li><a href="#inclines">Motion on an inclined plane</a></li>
+        <li><a href="#practice">Practice and review</a></li>
+      </ul>
+    </nav>
+
+    <h2>Learning Objectives</h2>
+    <p>By the end of this lesson, you should be able to:</p>
+    <ul>
+      <li>Distinguish scalar quantities from vector quantities.</li>
+      <li>Resolve displacement, velocity, acceleration, and force vectors into perpendicular components.</li>
+      <li>Explain why horizontal and vertical projectile motion can be treated independently when air resistance is negligible.</li>
+      <li>Apply constant-acceleration equations to calculate flight time, range, maximum height, and impact velocity.</li>
+      <li>Explain how drag changes a projectile's trajectory and how terminal velocity arises.</li>
+      <li>Draw free-body diagrams and calculate acceleration on inclined planes, with and without friction.</li>
+    </ul>
+    <div class="notice"><div class="box-title">Before you begin</div><p>Review displacement, velocity, acceleration, Newton's second law, and the constant-acceleration equations from one-dimensional motion. Unless stated otherwise, we take \(g=9.81\,\mathrm{m\,s^{-2}}\), assume a uniform gravitational field, and neglect air resistance in projectile calculations.</p></div>
+
+    <section id="vectors">
+      <h2>1. Vectors and Scalars</h2>
+      <p>A <strong>scalar</strong> has magnitude only. A <strong>vector</strong> has both magnitude and direction. For example, saying a car travels at \(20\,\mathrm{m\,s^{-1}}\) gives its speed, whereas saying it travels at \(20\,\mathrm{m\,s^{-1}}\) east gives its velocity.</p>
+      <div class="table-scroll"><table><thead><tr><th>Scalars</th><th>Vectors</th></tr></thead><tbody><tr><td>Distance</td><td>Displacement</td></tr><tr><td>Speed</td><td>Velocity</td></tr><tr><td>Mass</td><td>Force</td></tr><tr><td>Time</td><td>Acceleration</td></tr><tr><td>Energy</td><td>Momentum</td></tr></tbody></table></div>
+      <p>Vector directions matter when adding quantities. For example, walking 3 m east and then 4 m north gives a total <em>distance</em> of 7 m, but a <em>displacement magnitude</em> of only \(\sqrt{3^2+4^2}=5\,\mathrm{m}\), directed northeast.</p>
+    </section>
+
+    <section id="components">
+      <h2>2. Resolving Vectors into Components</h2>
+      <p>Suppose a vector \(\vec A\) has magnitude \(A\) and makes an angle \(\theta\) counterclockwise from the positive horizontal axis. Its horizontal and vertical components are</p>
+      <div class="equation">\[A_x=A\cos\theta,\qquad A_y=A\sin\theta.\]</div>
+      <p>These formulas follow from right-triangle trigonometry: cosine relates the adjacent side to the hypotenuse, while sine relates the opposite side to the hypotenuse. The components can be negative depending on the direction of the vector.</p>
+      <p>Conversely, the magnitude and direction of a vector can be recovered from its components:</p>
+      <div class="equation">\[A=\sqrt{A_x^2+A_y^2},\qquad \tan\theta=\frac{A_y}{A_x}.\]</div>
+      <p>When determining the angle, check the signs of both components to identify the correct quadrant. A calculator's inverse tangent alone may not distinguish opposite directions.</p>
+      <div class="example"><div class="box-title">Worked example: velocity components</div><p>A ball is launched at \(20\,\mathrm{m\,s^{-1}}\) at \(30^\circ\) above the horizontal. Find its initial velocity components.</p><div class="equation">\[v_{0x}=20\cos30^\circ=17.3\,\mathrm{m\,s^{-1}}\] \[v_{0y}=20\sin30^\circ=10.0\,\mathrm{m\,s^{-1}}.\]</div><p>Both components are positive because the ball initially moves rightward and upward.</p></div>
+    </section>
+
+    <section id="projectile">
+      <h2>3. Projectile Motion</h2>
+      <p>A <strong>projectile</strong> is an object that, after launch, moves under the influence of gravity alone in the ideal model. Its path is called its <strong>trajectory</strong>. A thrown ball is a projectile after it leaves the hand, but not while the hand is still pushing it.</p>
+      <p>Choose the positive \(x\)-direction to the right and the positive \(y\)-direction upward. If air resistance is negligible, the only force is the weight \(m\vec g\), so Newton's second law gives</p>
+      <div class="equation">\[a_x=0,\qquad a_y=-g.\]</div>
+      <div class="key-idea"><div class="box-title">Key idea: independent components</div><p>Gravity changes the <em>vertical</em> velocity, but it does not change the <em>horizontal</em> velocity. Horizontal and vertical positions evolve independently, even though both describe the same object at the same time.</p></div>
+      <h3>3.1 Kinematics equations</h3>
+      <p>For motion with constant acceleration along any single axis, we can use the following equations. Here \(u\) is the initial velocity component, \(v\) is the final velocity component, and \(s\) is the displacement along that axis:</p>
+      <div class="equation">\[\begin{aligned}v&=u+at,\\s&=\frac{u+v}{2}t,\\s&=ut+\frac12at^2,\\v^2&=u^2+2as.\end{aligned}\]</div>
+      <p>Use these equations separately for the horizontal and vertical directions. Do not substitute the total speed into a one-axis equation.</p>
+      <div class="table-scroll"><table><thead><tr><th>Horizontal (\(x\))</th><th>Vertical (\(y\))</th></tr></thead><tbody><tr><td>\(a_x=0\)</td><td>\(a_y=-g\)</td></tr><tr><td>\(v_x=v_{0x}\)</td><td>\(v_y=v_{0y}-gt\)</td></tr><tr><td>\(x=x_0+v_{0x}t\)</td><td>\(y=y_0+v_{0y}t-\frac12gt^2\)</td></tr></tbody></table></div>
+      <h3>3.2 Launching at an angle</h3>
+      <p>If the initial speed is \(v_0\) and the launch angle is \(\theta\) above the horizontal, the initial velocity components are</p>
+      <div class="equation">\[v_{0x}=v_0\cos\theta,\qquad v_{0y}=v_0\sin\theta.\]</div>
+      <p>Taking the launch position as the origin, the position at time \(t\) is</p>
+      <div class="equation">\[\begin{aligned}x(t)&=v_0\cos\theta\,t,\\y(t)&=v_0\sin\theta\,t-\frac12gt^2.\end{aligned}\]</div>
+      <p>Eliminating \(t\) gives the trajectory equation (for \(\cos\theta\ne0\)):</p>
+      <div class="equation">\[y=x\tan\theta-\frac{gx^2}{2v_0^2\cos^2\theta}.\]</div>
+      <p>Because this is quadratic in \(x\), the ideal trajectory is a parabola. The horizontal symmetry of the trajectory applies when launch and landing are at the same height; if the landing height differs, the observed flight segment is not symmetric about its highest point.</p>
+      <h3>3.3 The highest point</h3>
+      <p>At the highest point, the <strong>vertical velocity is zero</strong>, but the horizontal velocity generally remains nonzero. The acceleration is still downward and equal to \(-g\).</p>
+      <p>From \(v_y=v_{0y}-gt\), the time to reach the highest point is</p>
+      <div class="equation">\[t_{\mathrm{up}}=\frac{v_0\sin\theta}{g}.\]</div>
+      <p>Substituting into the vertical displacement equation gives the maximum height <em>above the launch point</em>:</p>
+      <div class="equation">\[H=\frac{v_0^2\sin^2\theta}{2g}.\]</div>
+      <h3>3.4 Flight time and range</h3>
+      <p>When a projectile lands at the <strong>same height</strong> from which it was launched, the upward and downward portions take equal time. Thus the total flight time is</p>
+      <div class="equation">\[T=\frac{2v_0\sin\theta}{g}.\]</div>
+      <p>The horizontal range is the horizontal speed multiplied by the total flight time:</p>
+      <div class="equation">\[\begin{aligned}R&=v_0\cos\theta\,T\\&=\frac{v_0^2\sin(2\theta)}{g}.\end{aligned}\]</div>
+      <p>For a fixed initial speed, level launch and landing heights, and negligible air resistance, the range is greatest at \(45^\circ\). Complementary launch angles, such as \(30^\circ\) and \(60^\circ\), produce the same range.</p>
+      <div class="notice"><div class="box-title">Important limitation</div><p>The flight-time and range formulas above assume that the launch and landing heights are equal. For a projectile launched from a cliff or platform, use the vertical position equation to find the actual landing time first.</p></div>
+      <h3>3.5 Common projectile situations</h3>
+      <p>Projectile problems can involve horizontal launches, upward angled launches, downward angled launches, and different landing heights. The method remains the same: choose axes, resolve the initial velocity, solve the vertical equation for time, and use that time in the horizontal equation.</p>
+      <figure><img src="projectile_motion.png" alt="Illustrations of five projectile launch and landing scenarios" width="600" loading="lazy"><figcaption>Figure 1. Different projectile launch and landing situations. Identify the initial velocity components and the change in height for each case.</figcaption></figure>
+    </section>
+
+    <section id="examples">
+      <h2>4. Worked Projectile Examples</h2>
+      <div class="example"><div class="box-title">Example 1: Ball launched horizontally from a table</div><p>A ball leaves a table horizontally at \(4.0\,\mathrm{m\,s^{-1}}\). The table is \(1.25\,\mathrm{m}\) high. Find the time to hit the floor and the horizontal distance traveled.</p><p><strong>Step 1: Vertical motion.</strong> The initial vertical velocity is zero. With upward positive, \(\Delta y=-1.25\,\mathrm m\):</p><div class="equation">\[-1.25=-\frac12(9.81)t^2\] \[t=\sqrt{\frac{2(1.25)}{9.81}}=0.505\,\mathrm s.\]</div><p><strong>Step 2: Horizontal motion.</strong> The horizontal velocity is constant:</p><div class="equation">\[\Delta x=v_xt=(4.0)(0.505)=2.02\,\mathrm m.\]</div><p><strong>Answer:</strong> The ball lands after about \(0.50\,\mathrm s\), approximately \(2.0\,\mathrm m\) from the table's edge.</p></div>
+      <div class="example"><div class="box-title">Example 2: Ball launched at an angle</div><p>A ball is launched at \(20\,\mathrm{m\,s^{-1}}\) at \(30^\circ\) above level ground. Find its maximum height, flight time, and range, assuming it lands at its launch height.</p><p><strong>Step 1: Resolve the velocity.</strong></p><div class="equation">\[v_{0x}=20\cos30^\circ=17.3\,\mathrm{m\,s^{-1}},\quad v_{0y}=20\sin30^\circ=10.0\,\mathrm{m\,s^{-1}}.\]</div><p><strong>Step 2: Maximum height.</strong></p><div class="equation">\[H=\frac{10.0^2}{2(9.81)}=5.10\,\mathrm m.\]</div><p><strong>Step 3: Total flight time.</strong></p><div class="equation">\[T=\frac{2(10.0)}{9.81}=2.04\,\mathrm s.\]</div><p><strong>Step 4: Horizontal range.</strong></p><div class="equation">\[R=(17.3)(2.04)=35.3\,\mathrm m.\]</div><p><strong>Answer:</strong> The maximum height is \(5.10\,\mathrm m\), the flight time is \(2.04\,\mathrm s\), and the range is \(35.3\,\mathrm m\).</p></div>
+      <div class="checkpoint"><div class="box-title">Check your understanding</div><p>At the highest point of a projectile's trajectory, is its acceleration zero?</p><details><summary>Show explanation</summary><p>No. Only the vertical component of <em>velocity</em> is zero at the highest point. Gravity continues to act, so the acceleration remains \(9.81\,\mathrm{m\,s^{-2}}\) downward.</p></details></div>
+    </section>
+
+    <section id="drag">
+      <h2>5. Air Resistance and Terminal Velocity</h2>
+      <p>The parabolic model assumes air resistance is negligible. In real life, a projectile moves through air and experiences a <strong>drag force</strong> that opposes its motion relative to the surrounding air. Drag typically increases as relative speed increases, so the acceleration is no longer constant.</p>
+      <p>Drag reduces horizontal speed, often makes the descending part of a projectile's trajectory steeper than the ascending part, and generally shortens the range compared with the idealized case under otherwise identical conditions. The exact path depends on the object's shape, size, speed, and the air.</p>
+      <h3>5.1 What is terminal velocity?</h3>
+      <p>Consider an object falling vertically through still air. Initially, its speed may be small, so drag is small and the object accelerates downward. As it falls faster, drag increases. Eventually, the upward forces can balance the object's weight:</p>
+      <div class="equation">\[mg=F_{\mathrm{drag}}+F_{\mathrm{buoyancy}}.\]</div>
+      <p>At that moment, the net force and acceleration are zero. The object continues moving at a constant speed called its <strong>terminal speed</strong>. If buoyancy is negligible, the balance simplifies to \(mg=F_{\mathrm{drag}}\).</p>
+      <p>For some objects moving rapidly through air, drag can be approximated by \(F_{\mathrm{drag}}=\tfrac12\rho C_d A v^2\), where \(\rho\) is air density, \(C_d\) is a drag coefficient, and \(A\) is the reference area. This model is useful for understanding trends, but it is not needed for basic ideal-projectile calculations.</p>
+      <div class="key-idea"><div class="box-title">Do not confuse zero acceleration with zero velocity</div><p>An object at terminal velocity is still moving. Its speed is constant because the forces balance, not because the forces have disappeared.</p></div>
+    </section>
+
+    <section id="inclines">
+      <h2>6. Motion on an Inclined Plane</h2>
+      <p>When an object rests or moves on a sloping surface, it is often easier to choose coordinate axes <strong>parallel and perpendicular to the plane</strong>, rather than horizontal and vertical. This allows us to resolve the weight into components that either pull the object down the slope or press it against the surface.</p>
+      <figure><img src="inclined_plane.png" alt="Inclined plane with an object and a diagram of gravitational force components" width="600" loading="lazy"><figcaption>Figure 2. Forces and components of weight for an object on an inclined plane.</figcaption></figure>
+      <h3>6.1 Resolving the weight</h3>
+      <p>For a plane at angle \(\theta\) above the horizontal, the object's weight \(mg\) acts vertically downward. Its components are</p>
+      <div class="equation">\[F_{g,\parallel}=mg\sin\theta,\qquad F_{g,\perp}=mg\cos\theta.\]</div>
+      <p>The parallel component points down the slope; the perpendicular component points into the surface. If there is no acceleration perpendicular to the plane and no other force has a perpendicular component, the normal reaction is</p>
+      <div class="equation">\[N=mg\cos\theta.\]</div>
+      <h3>6.2 Frictionless slope</h3>
+      <p>On a frictionless slope, the net force parallel to the surface is \(mg\sin\theta\). Newton's second law gives</p>
+      <div class="equation">\[ma=mg\sin\theta\quad\Rightarrow\quad a=g\sin\theta.\]</div>
+      <p>Notice that the mass cancels: in this ideal model, objects of different masses accelerate equally on the same slope.</p>
+      <h3>6.3 Including kinetic friction</h3>
+      <p>When an object slides <em>down</em> the plane, kinetic friction acts <em>up</em> the plane. In the simple model \(f_k=\mu_kN\), where \(\mu_k\) is the coefficient of kinetic friction. Taking down the slope as positive,</p>
+      <div class="equation">\[\begin{aligned}ma&=mg\sin\theta-\mu_kmg\cos\theta,\\a&=g(\sin\theta-\mu_k\cos\theta).\end{aligned}\]</div>
+      <p>This expression assumes the object is sliding down the slope. If the object moves up the slope, friction points down the slope instead. If it is at rest, static friction must be considered; its magnitude is not automatically \(\mu_sN\).</p>
+      <div class="example"><div class="box-title">Worked example: acceleration on a slope</div><p>A block slides down a frictionless plane inclined at \(25^\circ\) to the horizontal. Find its acceleration.</p><div class="equation">\[a=g\sin25^\circ=(9.81)\sin25^\circ=4.15\,\mathrm{m\,s^{-2}}.\]</div><p>The acceleration is \(4.15\,\mathrm{m\,s^{-2}}\) down the slope. It is smaller than \(g\) because only part of the weight acts parallel to the plane.</p></div>
+    </section>
+
+    <section id="practice">
+      <h2>7. Practice and Review</h2>
+      <h3>Common mistakes to avoid</h3>
+      <ul>
+        <li><strong>Using speed instead of a component:</strong> apply each kinematics equation to one direction at a time.</li>
+        <li><strong>Assuming acceleration is zero at the highest point:</strong> gravitational acceleration remains downward.</li>
+        <li><strong>Using level-ground range formulas for a cliff:</strong> solve for the actual landing time using vertical displacement.</li>
+        <li><strong>Mixing signs:</strong> define positive directions before substituting values.</li>
+        <li><strong>Assuming friction always points up a slope:</strong> it opposes relative motion or the tendency to slide.</li>
+      </ul>
+      <h3>Try these questions</h3>
+      <ol>
+        <li>A ball rolls horizontally off a \(2.0\,\mathrm m\)-high platform at \(5.0\,\mathrm{m\,s^{-1}}\). How far from the platform does it land?</li>
+        <li>A projectile is launched at \(15\,\mathrm{m\,s^{-1}}\) at \(40^\circ\) above level ground. What is its maximum height above the launch point?</li>
+        <li>A block slides down a frictionless \(30^\circ\) incline. What is its acceleration?</li>
+      </ol>
+      <details><summary>Show answers</summary><ol><li>\(3.19\,\mathrm m\) (approximately \(3.2\,\mathrm m\)).</li><li>\(4.74\,\mathrm m\).</li><li>\(4.91\,\mathrm{m\,s^{-2}}\) down the slope.</li></ol></details>
+      <div class="key-idea"><div class="box-title">Summary</div><p>Two-dimensional motion becomes much easier when vectors are separated into perpendicular components. For ideal projectiles, horizontal velocity is constant while vertical acceleration is \(-g\). On inclined planes, resolving the weight parallel and perpendicular to the surface makes Newton's laws straightforward to apply.</p></div>
+    </section>
+  </main>
+</body>
+</html>

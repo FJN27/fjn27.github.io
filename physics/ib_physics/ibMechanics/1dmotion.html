@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="IB Physics tutorials, topic guides, examination information and study tips from Bootcamp for Science.">
-  <title>IB Physics | Bootcamp for Science</title>
+  <title>Motion in One Dimension | Bootcamp for Science</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
@@ -30,398 +30,225 @@
     .ib-page .table-scroll ul { margin: 0; padding-left: 1.25rem; }
     .ib-page .table-scroll li { margin: 3px 0; }
     @media (max-width: 600px) { .ib-page { padding: 38px 20px 70px; } .ib-page th, .ib-page td { padding: 12px; min-width: 230px; } }
+    .ib-page .equations { padding: 16px 20px; margin: 22px 0; background: #faf7f8; border-left: 3px solid #9e1748; overflow-x: auto; }
+    .ib-page .example { padding: 20px 24px; margin: 28px 0; border: 1px solid #ddd; border-radius: 6px; }
+    .ib-page .example h3 { margin-top: 0; }
+    .ib-page .key-idea { background: #f7f7f7; padding: 16px 20px; margin: 22px 0; border-radius: 4px; }
+    .ib-page .section-nav { display: flex; flex-wrap: wrap; gap: 8px 18px; padding: 0; list-style: none; }
+    .ib-page .section-nav li { margin: 0; }
+    .ib-page figure { margin: 28px 0; }
+    .ib-page figcaption { font-size: .9rem; color: #555; margin-top: 10px; }
+    .ib-page .practice li { margin-bottom: 15px; }
+    .ib-page details { border-bottom: 1px solid #ddd; padding: 12px 0; }
+    .ib-page summary { cursor: pointer; font-weight: 600; }
+    .ib-page .small-note { font-size: .92rem; color: #555; }
+    .ib-page .table-scroll th, .ib-page .table-scroll td { width: auto; }
   </style>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
-<script defer
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 <body>
   <div id="navbar"></div>
-  
-    <main class="ib-page">
+  <main class="ib-page">
+    <h1>Motion in One Dimension</h1>
+    <p>How can we describe the motion of a car, a falling ball, or a person walking along a straight road? In this lesson, we develop the language and mathematical tools of <strong>kinematics</strong>—the study of motion without considering the forces that cause it. We begin with position and displacement, then explore velocity, acceleration, motion graphs, and the equations of uniformly accelerated motion.</p>
+    <p>Although real objects can move in three dimensions, many important situations can be described using just one coordinate. Understanding one-dimensional motion provides the foundation for projectile motion, Newton's laws, and more advanced mechanics.</p>
 
-        <h1>Motion in One Dimension</h1>
+    <h2 id="contents">Topics</h2>
+    <ul class="section-nav">
+      <li><a href="#vectors">Vectors and Scalars</a></li>
+      <li><a href="#position">Position and Displacement</a></li>
+      <li><a href="#velocity">Speed and Velocity</a></li>
+      <li><a href="#acceleration">Acceleration</a></li>
+      <li><a href="#diagrams">Motion Diagrams</a></li>
+      <li><a href="#graphs">Motion Graphs</a></li>
+      <li><a href="#equations">Kinematic Equations</a></li>
+      <li><a href="#freefall">Free Fall</a></li>
+      <li><a href="#incline">Inclined Planes: A Preview</a></li>
+      <li><a href="#practice">Practice Questions</a></li>
+    </ul>
 
-        <p>
-            This section introduces the concepts of
-            one-dimensional motion, including motion diagrams,
-            kinematics, and free fall.
-        </p>
+    <h2>Learning Objectives</h2>
+    <p>After completing this lesson, you should be able to:</p>
+    <ul>
+      <li>Distinguish scalar quantities from vector quantities and explain why signs matter in one-dimensional motion.</li>
+      <li>Calculate displacement, distance, average speed, and average velocity.</li>
+      <li>Distinguish average quantities from instantaneous velocity and acceleration.</li>
+      <li>Interpret dot diagrams and position–time, velocity–time, and acceleration–time graphs.</li>
+      <li>Use graph gradients and signed areas to find velocity, acceleration, displacement, and changes in velocity.</li>
+      <li>Derive and apply the constant-acceleration kinematic equations.</li>
+      <li>Analyze vertical motion under gravity using a consistent sign convention.</li>
+    </ul>
 
-        <h2>Topics</h2>
+    <h2 id="vectors">1. Vectors and Scalars</h2>
+    <p>Every physical quantity has a magnitude (its size), but some quantities also have a direction. A <strong>scalar</strong> has magnitude only, while a <strong>vector</strong> has both magnitude and direction. For example, saying a ball travels at 3 m/s describes its <em>speed</em>; saying it travels at 3 m/s to the left describes its <em>velocity</em>.</p>
+    <div class="table-scroll"><table><thead><tr><th>Scalars</th><th>Vectors</th></tr></thead><tbody><tr><td>Distance</td><td>Displacement</td></tr><tr><td>Speed</td><td>Velocity</td></tr><tr><td>Mass</td><td>Force</td></tr><tr><td>Energy</td><td>Acceleration</td></tr><tr><td>Time</td><td>Momentum</td></tr></tbody></table></div>
+    <p>In one dimension, we can express direction using a <strong>positive or negative sign</strong>. For example, if we choose right as positive, a velocity of \( +3\,\mathrm{m\,s^{-1}} \) means motion to the right, while \( -3\,\mathrm{m\,s^{-1}} \) means motion to the left. Neither sign makes the speed negative: speed is always nonnegative.</p>
+    <div class="key-idea"><strong>Key idea:</strong> You may choose which direction is positive, but you must use the same convention throughout a calculation.</div>
+    <p>Check your understanding with the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdvps2pIKWhqVBim6QA3grpgHVb_-X8EHMBxxFbfGNNURwSTA/viewform" target="_blank" rel="noopener noreferrer">Vectors and Scalars Quiz</a>.</p>
 
-        <ul class="topic-list">
-            <li>Vectors and Scalars</li>
-            <li>Motion Diagrams</li>
-            <li>Kinematic Equations</li>
-            <li>Motion on an Inclined Plane</li>
-            <li>Free-Fall Motion</li>
-            <li>Practice Questions</li>
-        </ul>
+    <h2 id="position">2. Position, Distance, and Displacement</h2>
+    <p><strong>Position</strong> tells us where an object is relative to a chosen origin. We denote its coordinate by \(x\). <strong>Displacement</strong> measures the change in position between two instants:</p>
+    <div class="equations">\[\Delta x=x_f-x_i\]</div>
+    <p>Displacement depends only on the initial and final positions, not on the path taken. <strong>Distance traveled</strong>, by contrast, is the total length of the path. It is always nonnegative.</p>
+    <div class="example"><h3>Worked Example: A Walk Along a Straight Road</h3>
+      <p>A student starts at \(x=0\), walks 8 m to the right, then walks 3 m back to the left. Taking right as positive, the final position is \(x_f=+5\,\mathrm{m}\).</p>
+      <p><strong>Displacement:</strong> \(\Delta x=5-0=+5\,\mathrm{m}\).</p>
+      <p><strong>Distance:</strong> \(8+3=11\,\mathrm{m}\).</p>
+      <p>The student has traveled 11 m, but ends up only 5 m to the right of the starting point. If the student returned all the way to the start, the displacement would be zero even though the distance traveled would not be.</p>
+    </div>
 
-        <h2>Learning Objectives</h2>
+    <h2 id="velocity">3. Speed and Velocity</h2>
+    <p><strong>Average speed</strong> is total distance traveled divided by elapsed time. <strong>Average velocity</strong> is displacement divided by elapsed time:</p>
+    <div class="equations">\[\text{average speed}=\frac{\text{total distance}}{\Delta t}\]
+    \[v_{\mathrm{avg}}=\frac{\Delta x}{\Delta t}\]</div>
+    <p>These quantities can differ whenever an object changes direction. For the student in the previous example, if the walk takes 11 s, the average speed is \(11/11=1.0\,\mathrm{m\,s^{-1}}\), but the average velocity is \(+5/11\approx+0.45\,\mathrm{m\,s^{-1}}\).</p>
+    <h3>Instantaneous Velocity</h3>
+    <p>A speedometer tells you how fast a vehicle is moving <em>at a particular instant</em>, rather than over an entire trip. Mathematically, instantaneous velocity is the limit of average velocity as the time interval becomes very small:</p>
+    <div class="equations">\[v(t)=\lim_{\Delta t\to 0}\frac{\Delta x}{\Delta t}=\frac{dx}{dt}\]</div>
+    <p>The instantaneous speed is the magnitude \(|v(t)|\). The derivative notation is useful for interpreting curved position–time graphs; you do not need calculus to solve most introductory constant-acceleration problems.</p>
 
-        <p>After completing this section, you should be able to:</p>
+    <h2 id="acceleration">4. Acceleration</h2>
+    <p><strong>Acceleration</strong> describes how quickly velocity changes. An object can accelerate by speeding up, slowing down, or reversing direction. Average acceleration is</p>
+    <div class="equations">\[a_{\mathrm{avg}}=\frac{v_f-v_i}{\Delta t}=\frac{\Delta v}{\Delta t}\]</div>
+    <p>The SI unit is \(\mathrm{m\,s^{-2}}\): a change in velocity of one metre per second, every second. Instantaneous acceleration is \(a(t)=dv/dt\).</p>
+    <p><strong>Important:</strong> Negative acceleration does not necessarily mean slowing down. If an object moves left (negative velocity) and accelerates left (negative acceleration), its speed increases. Speed decreases when velocity and acceleration have opposite signs.</p>
+    <div class="example"><h3>Worked Example: Slowing to a Stop</h3>
+      <p>A car moving right at \(+20\,\mathrm{m\,s^{-1}}\) brakes uniformly and stops in 5.0 s. Its acceleration is</p>
+      \[a=\frac{0-20}{5.0}=-4.0\,\mathrm{m\,s^{-2}}.\]
+      <p>The negative sign indicates that the acceleration points left, opposite to the car's velocity. The car slows down because the acceleration opposes its motion.</p>
+    </div>
 
-        <ul>
-            <li>
-                Distinguish between vectors and scalars,
-                including displacement versus distance,
-                and velocity versus speed.
-            </li>
+    <h2 id="diagrams">5. Motion Diagrams</h2>
+    <p>A <strong>motion diagram</strong> represents an object's position at equally spaced times. Imagine taking a photograph every 0.5 s and marking the object's position with a dot. The spacing between successive dots tells us about its speed.</p>
+    <ul>
+      <li><strong>Equal spacing:</strong> constant speed (for motion in a single direction).</li>
+      <li><strong>Increasing spacing:</strong> the object is speeding up.</li>
+      <li><strong>Decreasing spacing:</strong> the object is slowing down.</li>
+      <li><strong>Changing direction:</strong> the sequence of dots reverses along the line; direction arrows help distinguish the order of motion.</li>
+    </ul>
+    <p>Motion diagrams are different from motion <em>graphs</em>. A diagram shows snapshots of the object's location, whereas a graph plots a measured quantity against time. Both can describe the same motion from different perspectives.</p>
 
-            <li>
-                Explain the difference between instantaneous
-                velocity and instantaneous speed.
-            </li>
+    <h2 id="graphs">6. Interpreting Motion Graphs</h2>
+    <p>Motion graphs show how position, velocity, or acceleration changes with time. Two particularly useful ideas are <strong>gradient (slope)</strong> and <strong>signed area</strong>. Always check the labels and units on both axes before interpreting a graph.</p>
+    <h3>6.1 Position–Time Graphs</h3>
+    <figure><img src="motion_diagram1d.png" alt="Illustrations of five projectile launch and landing scenarios" width="600" loading="lazy">
+      <figcaption>Figure 1. Motion diagram for different cases.</figcaption></figure>
 
-            <li>
-                Interpret displacement-time, velocity-time,
-                and acceleration-time graphs.
-            </li>
+    <p>The gradient of a position–time graph gives velocity. For a straight line, the gradient is constant and equals \(\Delta x/\Delta t\). For a curved graph, the tangent gradient at a particular point gives instantaneous velocity.</p>
+    <ul><li>Horizontal line: the object is stationary.</li><li>Positive gradient: motion in the positive direction.</li><li>Negative gradient: motion in the negative direction.</li><li>Steeper gradient in magnitude: greater speed.</li></ul>
+    <p>For example, if position changes from 2 m to 14 m in 4 s along a straight-line graph, velocity is \((14-2)/4=+3\,\mathrm{m\,s^{-1}}\). A position–time graph's height is <em>position</em>, not speed.</p>
+    <h3>6.2 Velocity–Time Graphs</h3>
+    <p>The gradient of a velocity–time graph gives acceleration. A horizontal line means constant velocity; a line sloping upward means positive acceleration; and a line sloping downward means negative acceleration.</p>
+    <div class="equations">\[a=\frac{\Delta v}{\Delta t}\qquad\Delta x=\text{signed area under the }v\text{–}t\text{ graph}\]</div>
+    <p>For a horizontal segment, displacement is the rectangular area \(v\Delta t\). For a straight line starting at zero velocity, displacement is the triangular area \(\tfrac12 vt\). Regions below the time axis contribute <em>negative displacement</em>. To find total distance, add the magnitudes of the separate signed regions instead.</p>
+    <div class="example"><h3>Worked Example: Area Under a Velocity–Time Graph</h3>
+      <p>An object moves at \(+4\,\mathrm{m\,s^{-1}}\) for 3 s, then at \(-2\,\mathrm{m\,s^{-1}}\) for 2 s. Its displacement is</p>
+      \[\Delta x=(4)(3)+(-2)(2)=+8\,\mathrm{m}.\]
+      <p>Its total distance is \(12+4=16\,\mathrm{m}\). Notice that the displacement and distance are not equal because the object changes direction.</p>
+    </div>
+    <h3>6.3 Acceleration–Time Graphs</h3>
+    <p>The signed area under an acceleration–time graph gives the change in velocity:</p>
+    <div class="equations">\[\Delta v=\int_{t_i}^{t_f}a(t)\,dt\]</div>
+    <p>For constant acceleration, this reduces to \(\Delta v=a\Delta t\). A graph on the time axis (\(a=0\)) means velocity is constant, not necessarily zero. The gradient of an acceleration–time graph is called <em>jerk</em>, which is not normally required for introductory IB Physics.</p>
+    <h3>Graph Summary</h3>
+    <div class="table-scroll"><table><thead><tr><th>Graph</th><th>Gradient</th><th>Signed area</th></tr></thead><tbody><tr><td>Position–time</td><td>Velocity</td><td>No standard introductory kinematics interpretation</td></tr><tr><td>Velocity–time</td><td>Acceleration</td><td>Displacement</td></tr><tr><td>Acceleration–time</td><td>Jerk (extension)</td><td>Change in velocity</td></tr></tbody></table></div>
+    <p>For additional practice, use the <a href="Motion-Diagram-Problems.pdf" target="_blank" rel="noopener">Motion Diagram Practice Questions (PDF)</a>.</p>
 
-            <li>
-                Determine displacement from the area under
-                a velocity-time graph.
-            </li>
+    <h2 id="equations">7. Kinematic Equations for Constant Acceleration</h2>
+    <p>When acceleration is <strong>constant</strong>, we can connect initial velocity \(v_0\), final velocity \(v\), displacement \(\Delta x\), acceleration \(a\), and elapsed time \(t\) using four equations:</p>
+    <div class="equations">\[v=v_0+at\]
+    \[\Delta x=\frac{v_0+v}{2}t\]
+    \[\Delta x=v_0t+\frac12 at^2\]
+    \[v^2=v_0^2+2a\Delta x\]</div>
+    <p>Here, \(v_0\) is the velocity at the beginning of the chosen time interval, \(v\) is the velocity at its end, and \(\Delta x=x_f-x_i\). All velocities and displacements are <em>signed</em> quantities.</p>
+    <h3>Where Do These Equations Come From?</h3>
+    <p>Start with the definition of constant acceleration:</p>
+    <div class="equations">\[a=\frac{v-v_0}{t}\quad\Rightarrow\quad v=v_0+at.\]</div>
+    <p>Because velocity changes linearly with time, the average velocity is the arithmetic mean of the initial and final velocities. Multiplying by time gives</p>
+    <div class="equations">\[\Delta x=\frac{v_0+v}{2}t.\]</div>
+    <p>Substitute \(v=v_0+at\) into this expression:</p>
+    <div class="equations">\[\begin{aligned}\Delta x&=\frac{v_0+(v_0+at)}{2}t\\&=v_0t+\frac12 at^2.\end{aligned}\]</div>
+    <p>Finally, eliminating time from \(v=v_0+at\) and \(\Delta x=(v_0+v)t/2\) gives</p>
+    <div class="equations">\[v^2-v_0^2=2a\Delta x\quad\Rightarrow\quad v^2=v_0^2+2a\Delta x.\]</div>
+    <p>These relationships are not universal: they require <strong>constant acceleration</strong> over the time interval. If acceleration varies, use a suitable graph, calculus, or another model.</p>
+    <h3>How to Choose an Equation</h3>
+    <p>List the known quantities and identify the unknown. Then select an equation that does not contain another unknown. For example, if time is not given and is not required, \(v^2=v_0^2+2a\Delta x\) is often the simplest choice.</p>
+    <div class="example"><h3>Worked Example: A Bicycle Accelerating</h3>
+      <p>A bicycle moves right at \(2.0\,\mathrm{m\,s^{-1}}\) and accelerates uniformly at \(+1.5\,\mathrm{m\,s^{-2}}\) for 4.0 s. Find its final velocity and displacement.</p>
+      <p><strong>Step 1:</strong> Choose right as positive and record \(v_0=+2.0\), \(a=+1.5\), and \(t=4.0\) in SI units.</p>
+      <p><strong>Step 2:</strong> Calculate final velocity:</p>
+      \[v=2.0+(1.5)(4.0)=+8.0\,\mathrm{m\,s^{-1}}.\]
+      <p><strong>Step 3:</strong> Calculate displacement:</p>
+      \[\Delta x=(2.0)(4.0)+\frac12(1.5)(4.0)^2=+20\,\mathrm{m}.\]
+      <p>The bicycle moves 20 m to the right while increasing its speed.</p>
+    </div>
 
-            <li>
-                Determine velocity and acceleration using
-                derivatives of position and velocity.
-            </li>
+    <h2 id="freefall">8. Free-Fall Motion</h2>
+    <p>An object is in <strong>free fall</strong> when gravity is the only force acting on it. Near Earth's surface, gravitational acceleration has approximately constant magnitude \(g=9.81\,\mathrm{m\,s^{-2}}\) and points downward. When air resistance is negligible, objects of different masses fall with the same acceleration.</p>
+    <p>For vertical motion, replace \(x\) with the vertical coordinate \(y\). If we choose <strong>upward as positive</strong>, then \(a_y=-g\):</p>
+    <div class="equations">\[v_y=v_{0y}-gt\]
+    \[\Delta y=v_{0y}t-\frac12 gt^2\]
+    \[v_y^2=v_{0y}^2-2g\Delta y\]</div>
+    <h3>Dropping an Object</h3>
+    <p>If an object is released from rest, \(v_{0y}=0\). Its downward displacement after time \(t\) is \(\Delta y=-\tfrac12 gt^2\). The distance fallen is therefore \(\tfrac12 gt^2\), as long as the object continues downward.</p>
+    <div class="example"><h3>Worked Example: Dropping a Ball</h3>
+      <p>A ball is released from rest and falls for 2.0 s. Ignoring air resistance, find its velocity and vertical displacement. Take upward as positive.</p>
+      \[v_y=0-(9.81)(2.0)=-19.6\,\mathrm{m\,s^{-1}}\]
+      \[\Delta y=0-\frac12(9.81)(2.0)^2=-19.6\,\mathrm{m}\]
+      <p>The ball is moving downward at about 19.6 m/s and is 19.6 m below its release point. The numerical values happen to be equal here, but velocity and displacement have different units.</p>
+    </div>
+    <h3>Throwing a Ball Upward</h3>
+    <p>A ball thrown upward slows down while rising because its acceleration points downward. At the highest point, its <strong>instantaneous vertical velocity is zero</strong>, but its acceleration is still \(-g\). It then begins moving downward and gains speed.</p>
+    <div class="example"><h3>Worked Example: Maximum Height</h3>
+      <p>A ball is thrown vertically upward at \(+14.0\,\mathrm{m\,s^{-1}}\). Find the time to reach its highest point and the maximum height above the release point, neglecting air resistance.</p>
+      <p>At the highest point, \(v_y=0\):</p>
+      \[0=14.0-9.81t\quad\Rightarrow\quad t=1.43\,\mathrm{s}.\]
+      <p>Using the equation without time:</p>
+      \[0=(14.0)^2-2(9.81)\Delta y\]
+      \[\Delta y=\frac{196}{19.62}\approx 9.99\,\mathrm{m}.\]
+      <p>The maximum height is approximately 10.0 m above the launch point.</p>
+    </div>
+    <div class="notice"><strong>Common misconception:</strong> The acceleration of a ball at the highest point is <em>not</em> zero. Only its instantaneous vertical velocity is zero. Gravity continues to act throughout the flight.</div>
 
-            <li>
-                Apply kinematic equations to solve problems.
-            </li>
+    <h2 id="incline">9. Motion on an Inclined Plane: A Preview</h2>
+    <p>Motion along a straight ramp is also one-dimensional if we measure position along the slope. However, determining the acceleration requires an analysis of forces, so inclined-plane dynamics belongs primarily with Newton's laws.</p>
+    <p>For a frictionless incline at angle \(\theta\) to the horizontal, the component of gravitational acceleration along the slope has magnitude \(g\sin\theta\). If we choose <em>down the slope</em> as positive, \(a=g\sin\theta\). Once the acceleration is known, the same constant-acceleration equations apply along the slope.</p>
+    <p>With friction or additional forces, acceleration must be determined from the net force; it is not necessarily \(g\sin\theta\).</p>
 
-            <li>
-                Analyze free-fall motion and its motion diagrams.
-            </li>
-        </ul>
+    <h2 id="practice">10. Practice Questions</h2>
+    <p>Try these problems before opening the solutions. State your positive direction, show your equations, and include units.</p>
+    <ol class="practice">
+      <li><strong>Distance and displacement:</strong> A runner travels 30 m east and then 12 m west. Find the total distance and displacement.
+        <details><summary>Show solution</summary><p>Distance = \(30+12=42\,\mathrm{m}\). Taking east as positive, displacement = \(+30-12=+18\,\mathrm{m}\), or 18 m east.</p></details></li>
+      <li><strong>Average speed and velocity:</strong> The runner completes the journey above in 14 s. Find average speed and average velocity.
+        <details><summary>Show solution</summary><p>Average speed = \(42/14=3.0\,\mathrm{m\,s^{-1}}\). Average velocity = \(18/14\approx1.29\,\mathrm{m\,s^{-1}}\) east.</p></details></li>
+      <li><strong>Constant acceleration:</strong> A car starts from rest and accelerates uniformly at \(2.5\,\mathrm{m\,s^{-2}}\) for 6.0 s. Find its final velocity and displacement.
+        <details><summary>Show solution</summary><p>\(v=0+(2.5)(6.0)=15\,\mathrm{m\,s^{-1}}\). \(\Delta x=0+\tfrac12(2.5)(6.0)^2=45\,\mathrm{m}\).</p></details></li>
+      <li><strong>Stopping distance:</strong> A vehicle moving at \(+18\,\mathrm{m\,s^{-1}}\) decelerates uniformly at \(-3.0\,\mathrm{m\,s^{-2}}\). How far does it travel before stopping?
+        <details><summary>Show solution</summary><p>Use \(v^2=v_0^2+2a\Delta x\). Thus \(0=18^2+2(-3.0)\Delta x\), giving \(\Delta x=54\,\mathrm{m}\).</p></details></li>
+      <li><strong>Free fall:</strong> A stone is dropped from rest. How far does it fall in 3.0 s, ignoring air resistance?
+        <details><summary>Show solution</summary><p>Distance = \(\tfrac12gt^2=\tfrac12(9.81)(3.0)^2\approx44.1\,\mathrm{m}\).</p></details></li>
+      <li><strong>Conceptual:</strong> A ball reaches the highest point of its vertical flight. What are its velocity and acceleration at that instant?
+        <details><summary>Show solution</summary><p>Its instantaneous velocity is zero, but its acceleration is still \(9.81\,\mathrm{m\,s^{-2}}\) downward, assuming negligible air resistance.</p></details></li>
+    </ol>
 
-        <h2>Kinematic Equations</h2>
-
-        <p>
-            For motion with constant acceleration,
-            the following equations are useful:
-        </p>
-
-        <div class="equations">
-            <p>\(v = v_0 + at\)</p>
-            <p>\(\Delta x = \frac{v+v_0}{2}t\)</p>
-            <p>\(\Delta x = v_0t + \frac{1}{2}at^2\)</p>
-            <p>\(v^2 = v_0^2 + 2a\Delta x\)</p>
-        </div>
-
-        <h3>Symbols</h3>
-
-        <ul>
-            <li>\(v_0\): Initial velocity</li>
-            <li>\(v\): Final velocity</li>
-            <li>\(a\): Acceleration</li>
-            <li>\(t\): Elapsed time</li>
-            <li>\(\Delta x\): Displacement</li>
-        </ul>
-
-        <h2>Lecture Resources</h2>
-
-        <p>
-            Download the lecture slides and notes to review
-            the concepts covered in this section.
-        </p>
-
-        <ul>
-            <li>
-                <a href="Motion-In-1D-Lecture.pdf"
-                target="_blank" rel="noopener">
-                    Lecture Slides (PDF)
-                </a>
-            </li>
-            <li>
-                <a href="Motion-In-1D-Lecture.pptx" download>
-                    Lecture Slides (PowerPoint)
-                </a>
-            </li>
-        </ul>
-
-        
-        <h2>Vectors and Scalars</h2>
-
-        <p>
-            A <strong>vector</strong> is a physical quantity that has both magnitude and direction, whereas a <strong>scalar</strong>
-            is a physical quantity that has magnitude only.
-            Magnitude describes the size of a quantity.
-        </p>
-
-        <h3>Example</h3>
-
-        <p>
-            Consider a ball moving at 3 meters per second to the left.
-        </p>
-
-        <ul>
-            <li>
-                <strong>3 meters per second (3 m/s):</strong>
-                The magnitude of the velocity, also known as speed.
-            </li>
-            <li>
-                <strong>Left:</strong>
-                The direction of motion.
-            </li>
-            <li>
-                <strong>3 meters per second to the left:</strong>
-                The velocity, which includes both magnitude and direction.
-            </li>
-        </ul>
-
-        <h3>Examples of Scalar and Vector Quantities</h3>
-
-        <div class="table-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Scalar Quantities</th>
-                        <th>Vector Quantities</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Distance</td>
-                        <td>Displacement</td>
-                    </tr>
-                    <tr>
-                        <td>Speed</td>
-                        <td>Velocity</td>
-                    </tr>
-                    <tr>
-                        <td>Mass</td>
-                        <td>Force</td>
-                    </tr>
-                    <tr>
-                        <td>Energy</td>
-                        <td>Acceleration</td>
-                    </tr>
-                    <tr>
-                        <td>Time</td>
-                        <td>Momentum</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <p>
-            In this unit, we will focus primarily on
-            <strong>distance and speed</strong> as scalar quantities,
-            and <strong>displacement, velocity, and acceleration</strong>
-            as vector quantities.
-        </p>
-
-        Quiz on vector and scalar: https://docs.google.com/forms/d/e/1FAIpQLSdvps2pIKWhqVBim6QA3grpgHVb_-X8EHMBxxFbfGNNURwSTA/viewform
-
-        
-        <h2>Motion Diagrams</h2>
-
-        <p>
-            Motion graphs provide a visual representation of how an object's position, velocity, and 
-            acceleration change over time.
-        </p>
-
-        <p>
-            In this section, we will explore three types of graphs:
-        </p>
-
-        <ul>
-            <li>Displacement vs. Time</li>
-            <li>Velocity vs. Time</li>
-            <li>Acceleration vs. Time</li>
-        </ul>
-
-        <p>
-            When interpreting motion graphs, two important concepts
-            are the <strong>gradient (slope)</strong> and the
-            <strong>area under the curve</strong>.
-        </p>
-
-        <h3>1. Displacement vs. Time</h3>
-
-        <p>
-            Velocity is the rate of change of displacement
-            with respect to time. Therefore, the gradient
-            of a displacement-time graph represents velocity.
-        </p>
-
-        <p>
-            For a straight-line graph:
-        </p>
-
-        <p>
-            \(v = \frac{\Delta x}{\Delta t}\)
-        </p>
-
-        <ul>
-            <li>
-                <strong>Zero gradient:</strong>
-                The object is stationary.
-            </li>
-            <li>
-                <strong>Positive gradient:</strong>
-                The object moves in the positive direction.
-            </li>
-            <li>
-                <strong>Negative gradient:</strong>
-                The object moves in the negative direction.
-            </li>
-            <li>
-                <strong>Steeper gradient:</strong>
-                The object has a greater speed.
-            </li>
-        </ul>
-
-        <p>
-            A straight line with a constant gradient indicates
-            constant velocity. A curved line indicates changing
-            velocity, and its gradient at a particular point
-            gives the instantaneous velocity.
-        </p>
-
-        <h3>2. Velocity vs. Time</h3>
-
-        <p>
-            The gradient of a velocity-time graph represents
-            acceleration:
-        </p>
-
-        <p>
-            \(a = \frac{\Delta v}{\Delta t}\)
-        </p>
-
-        <ul>
-            <li>
-                <strong>Zero gradient:</strong>
-                The object moves at constant velocity.
-            </li>
-            <li>
-                <strong>Positive gradient:</strong>
-                The object has positive acceleration.
-            </li>
-            <li>
-                <strong>Negative gradient:</strong>
-                The object has negative acceleration.
-            </li>
-        </ul>
-
-        <p>
-            The signed area under a velocity-time graph
-            represents displacement:
-        </p>
-
-        <p>
-            \(\Delta x = \int_{t_1}^{t_2} v(t)\,dt\)
-        </p>
-
-        <ul>
-            <li>
-                Area above the time axis contributes
-                positive displacement.
-            </li>
-            <li>
-                Area below the time axis contributes
-                negative displacement.
-            </li>
-            <li>
-                The sum of the absolute areas represents
-                the total distance traveled.
-            </li>
-        </ul>
-
-        <h3>3. Acceleration vs. Time</h3>
-
-        <p>
-            The signed area under an acceleration-time graph
-            represents the change in velocity:
-        </p>
-
-        <p>
-            \(\Delta v = \int_{t_1}^{t_2} a(t)\,dt\)
-        </p>
-
-        <ul>
-            <li>
-                <strong>Positive area:</strong>
-                Contributes a positive change in velocity.
-            </li>
-            <li>
-                <strong>Negative area:</strong>
-                Contributes a negative change in velocity.
-            </li>
-            <li>
-                <strong>Zero acceleration:</strong>
-                The object's velocity remains constant.
-            </li>
-        </ul>
-
-        <p>
-            The gradient of an acceleration-time graph
-            represents the rate of change of acceleration,
-            known as <em>jerk</em>. This is generally beyond
-            the scope of introductory IB Physics.
-        </p>
-
-        <h2>Summary</h2>
-
-        <div class="table-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Graph</th>
-                        <th>Gradient</th>
-                        <th>Area Under Curve</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Displacement-Time</td>
-                        <td>Velocity</td>
-                        <td>Not typically used</td>
-                    </tr>
-                    <tr>
-                        <td>Velocity-Time</td>
-                        <td>Acceleration</td>
-                        <td>Displacement</td>
-                    </tr>
-                    <tr>
-                        <td>Acceleration-Time</td>
-                        <td>Jerk</td>
-                        <td>Change in velocity</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <h2>Practice Questions</h2>
-
-        <p>
-            Practice interpreting motion graphs using
-            questions from the IB Physics Questionbank.
-        </p>
-
-        <p>
-            <a href="Motion-Diagram-Problems.pdf"
-            target="_blank"
-            rel="noopener">
-                View Motion Diagram Practice Questions (PDF)
-            </a>
-        </p>
-
-        <h2>Practice Questions</h2>
-
-        <p>
-            Test your understanding of motion diagrams,
-            kinematics, and free-fall motion.
-        </p>
-
-    </main>
-
-
+    <h2>11. Summary and Study Tips</h2>
+    <ul>
+      <li>Define a coordinate system and sign convention before calculating.</li>
+      <li>Displacement is final position minus initial position; distance is total path length.</li>
+      <li>Average velocity uses displacement, whereas average speed uses distance.</li>
+      <li>On a position–time graph, gradient gives velocity. On a velocity–time graph, gradient gives acceleration and signed area gives displacement.</li>
+      <li>Use the four kinematic equations only when acceleration is constant.</li>
+      <li>For free fall near Earth, acceleration is always downward, even at the highest point.</li>
+    </ul>
+    <h2>Lecture Resources</h2>
+    <p>Use these existing resources to review the lesson and practice with additional examples:</p>
+    <ul>
+      <li><a href="Motion-In-1D-Lecture.pdf" target="_blank" rel="noopener">Lecture Slides (PDF)</a></li>
+      <li><a href="Motion-In-1D-Lecture.pptx" download>Lecture Slides (PowerPoint)</a></li>
+      <li><a href="Motion-Diagram-Problems.pdf" target="_blank" rel="noopener">Motion Diagram Practice Questions (PDF)</a></li>
+    </ul>
+    <p class="small-note">The linked lecture files and practice PDF must remain in the same folder as this HTML file, or their paths should be updated to match your website.</p>
+  </main>
 </body>
 </html>
